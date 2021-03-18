@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+<body>
+    <form method="get" action="simpleform.html" class ='wufoo'>
+        <h2>Order Form</h2>
+        <p>What would you like to buy?</p>
+        <select>
+            <option vaule ="  ">A</option>
+            <option>B (+ 0.5$)</option>
+            <option>C (+0.5$)</option>
+        </select>
+        <p>How many would like to order?</p>
+            <input type="radio" name="rd"/>1 - $10<br>
+            <input type="radio" name="rd"/>2 - $20<br>
+            <input type="radio" name="rd"/>3 - $30<br>
+    </form>
+    <p>Name <span style="color: red>*</span>;"</p><br>
+    <input type="text" name="FirstName" placeholder="FirstName"size='10'/>
+    <input type="text" name="lastname" placeholder="LastName"size='10'><br>
+    <p>
+        Email<br>
+        <input type='email' name='email' placeholder="Email"size='25'/>
+        <p>
+            Phone Number<br>
+            <input type="number" name='number' size='5' />
+            <input type="number" name='number' size='5'/>
+            <input type="number" name='number'size='5'/>
+            <br><br>
+            <input type="button" name='btSubmit' value='Submit'/>
+            <style>
+                .wufoo {
+                    font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+                }
+            </style>
+        </p>
+    </p>
+</body>
+</html>
