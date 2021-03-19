@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    Số A<input type="number" id="so_a"/><br>
+    Số B<input type="number" id="so_b"/><br>
+    <input type="button" id="thuc_hien_cong" value="Cộng"/>
+    <input type="button" id="thuc_hien_tru" value="Trừ"/>
+    <input type="button" id="thuc_hien_nhan" value="Nhân"/>
+    <input type="button" id="thuc_hien_chia" value="Chia"/><br>
+    <input type="reset" value="Đặt lại"/>
+</form>
+    <script>
+        let nut_cong = document.getElementById('thuc_hien_cong');
+        nut_cong.addEventListener('click',function(){
+            so_a = document.getElementById('so_a');
+            gia_tri_a = so_a.value;
+            so_b = document.getElementById('so_b');
+            gia_tri_b = so_b.value;
+
+            //xu ly chuyen doi du lieu
+            gia_tri_a = gia_tri_a*1
+            gia_tri_b = gia_tri_b*1
+            
+            thuc_hien_cong = gia_tri_a + gia_tri_b;
+            alert(thuc_hien_cong)
+
+        });
+        let nut_tru = document.getElementById('thuc_hien_tru');
+        nut_tru.addEventListener('click',function(){
+            so_a = document.getElementById('so_a');
+            gia_tri_a = so_a.value;
+            so_b = document.getElementById('so_b');
+            gia_tri_b = so_b.value;
+
+            //xu ly chuyen doi du lieu
+            gia_tri_a = gia_tri_a*1
+            gia_tri_b = gia_tri_b*1
+            
+            thuc_hien_tru = gia_tri_a - gia_tri_b;
+            alert(thuc_hien_tru)
+
+        });
+        let nut_nhan = document.getElementById('thuc_hien_nhan');
+        nut_nhan.addEventListener('click',function(){
+            so_a = document.getElementById('so_a');
+            gia_tri_a = so_a.value;
+            so_b = document.getElementById('so_b');
+            gia_tri_b = so_b.value;
+
+            //xu ly chuyen doi du lieu
+            gia_tri_a = gia_tri_a*1
+            gia_tri_b = gia_tri_b*1
+            
+            thuc_hien_nhan = gia_tri_a * gia_tri_b;
+            alert(thuc_hien_nhan)
+
+        });
+        let nut_chia = document.getElementById('thuc_hien_chia');
+        nut_chia.addEventListener('click',function(){
+            so_a = document.getElementById('so_a');
+            gia_tri_a = so_a.value;
+            so_b = document.getElementById('so_b');
+            gia_tri_b = so_b.value;
+
+            //xu ly chuyen doi du lieu
+            gia_tri_a = gia_tri_a*1
+            gia_tri_b = gia_tri_b*1
+            
+            thuc_hien_chia = gia_tri_a / gia_tri_b;
+            alert(thuc_hien_chia)
+
+        });
+
+        
+
+    </script>
+</body>
+</html>
