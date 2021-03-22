@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <h1>CHU VI VÀ DIỆN TÍCH HÌNH TRÒN</h1>
+    Nhập bán kính hình tròn <input type ="number" id="ban_kinh"/><br><br>
+    Chu vi hình tròn là:<p id="chu_vi"></p>
+    Diện tích hình tròn là:<p id="dien_tich"></p>
+    <input type="button" id="ket_qua" value="Kết quả"/>
+    <input type="reset" value="Đặt lại"/>
+</form>
+ <script>
+     let tinh = document.getElementById('ket_qua');
+        tinh.addEventListener("click",function(){
+        bankinh =document.getElementById('ban_kinh').value;
+        bankinh=bankinh*1
+        const pi= 3.14
+    let dientich = bankinh * bankinh * pi
+    let chuvi = bankinh * 2 * pi
+    chu_vi = document.getElementById('chu_vi');
+        chu_vi.innerText = chuvi
+        
+        dien_tich = document.getElementById('dien_tich');
+        dien_tich.innerText = dientich
+        });
+
+ </script>
+
+</body>
+</html>

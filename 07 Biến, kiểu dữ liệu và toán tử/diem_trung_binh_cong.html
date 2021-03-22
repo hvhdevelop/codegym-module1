@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    Điểm Vật lý<input type="number" id="diem_ly"/>
+    <br>
+    Điểm Hóa học<input type="number" id="diem_hoa"/>
+    <br>
+    Điểm Sinh học<input type="number" id="diem_sinh"/>
+    <br>
+    Điểm tổng:<p id="tong"></p>
+    
+    Điểm trung binh cộng:<p id="tbc"></p>
+        <input type="button" id="ket_qua" value="Kết quả"/>
+        <input type="reset" value="Đặt lại"/>
+    </form>
+    <script>
+        let tinh = document.getElementById('ket_qua');
+        tinh.addEventListener("click",function(){
+            dvl = document.getElementById('diem_ly').value;
+        dhh = document.getElementById('diem_hoa').value;
+        dsh = document.getElementById('diem_sinh').value;
+
+        dvl = dvl*1
+        dhh = dhh*1
+        dsh = dsh*1
+        let trungbinhcong =  ( dvl+ dhh + dsh ) / 3
+        let diemtong = dvl + dhh + dsh
+         tbc = document.getElementById('tbc');
+        tbc.innerText = trungbinhcong
+        
+        tong = document.getElementById('tong');
+        tong.innerText = diemtong
+        });
+        
+
+
+    </script>
+</body>
+</html>

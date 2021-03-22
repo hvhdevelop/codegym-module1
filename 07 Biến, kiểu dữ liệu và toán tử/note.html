@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //khoi tao biến so_a với giá trị 5
+        so_a = 5;
+        so_a = 8;
+​
+        //từ khóa var
+        var ho_va_ten       = 'Nguyễn Tài Tâm'; //kiểu dữ liệu string
+        var soDienThoai     = 0943612567;//kiểu dữ liệu là số
+​
+        //từ khóa let
+        let ngay_sinh       = '19/3/2021';
+​
+        //khai bao hang
+        const PI = 3.14;
+​
+        //toán tử
+        //toán tử số học: + - * / %
+​
+        /*
+        Lớn hơn: >
+        Nhỏ hơn: <
+        Bằng giá trị: ==
+        Bằng giá trị và bằng kiểu dữ liệu: ===
+        Lớn hơn hoặc bằng: >=
+        Nhỏ hơn hoặc bằng: <=
+        */
+​
+        let a = 5; //kiểu dữ liệu là số
+        let b = '5'; //kiểu dữ liệu chữ
+​
+        //chuyển đổi kiểu dữ liệu chữ sang số
+        //cách 1
+        //b = b * 1;
+​
+        //cách 2
+        b = parseInt( b );
+​
+        //cách 3
+        //b = Number( b );
+​
+​
+        //a==b : đúng
+        //a===b: sai
+​
+        document.write( 'Kiểu dữ liệu của a: ' + typeof a );
+        document.write( '<br>' );
+        document.write( 'Kiểu dữ liệu của b: ' + typeof b );
+​
+        if( a === b ){
+            //document.write( 'Số a bằng với b' );
+        }else{
+            //document.write( 'Số a không bằng với b' );
+        }
+​
+    </script>
+</body>
+</html>
