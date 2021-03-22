@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TÍNH CHU VI VÀ DIỆN TÍCH HÌNH CHỮ NHẬT</h1>
+    <form>
+        Chiều dài hình chữ nhật  <input type='number' id='chieu_dai'/><br>
+        Chiều rộng hình chữ nhật <input type='number' id='chieu_rong'/><br>
+        Chu vi hình chữ nhật là <p id='chu_vi'></p>
+        Diện tích hình chữ nhật là <p id ='dien_tich'></p>
+        <input type ="button" id='ket_qua' value='Kết quả'>
+        <input type ='reset' id='dat_lai' value='Đặt lại'>
+
+    </form>
+    <script>
+        let kq = document.getElementById('ket_qua');
+        kq.addEventListener('click',function(){
+            cd = document.getElementById('chieu_dai').value;
+            cr = document.getElementById('chieu_rong').value;
+            cd = cd*1
+            cr = cr*1
+            cv = ( cd + cr )* 2;
+            dt = cd * cr;
+            dientich = document.getElementById('dien_tich');
+            dientich.innerText = dt
+            chuvi = document.getElementById('chu_vi');
+            chuvi.innerText = cv
+        });
+    </script>
+</body>
+</html>

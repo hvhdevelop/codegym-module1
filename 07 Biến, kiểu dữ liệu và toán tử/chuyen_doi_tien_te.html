@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <table>
+       <tr>
+           <td>Amount<br>
+        <input type='number' id='amount'/></td>
+        <td>
+            From currency
+            <select id='from_currency'>
+                <option value='vn'>VietNam</option>
+            </select>
+        </td>
+        <td>
+            To currency
+            <select id='to_currency'>
+                <option value="usd">USD</option>
+            </select>
+
+        </td>
+        <td>
+            <input type="button" value="Convert" id="kq"/>
+
+        </td>
+       </tr>
+       
+   </table>
+   <p id='ket_qua'></p>
+   <script>
+       let kq = document.getElementById('kq');
+       kq.addEventListener('click',function(){
+           let gia_tri = document.getElementById('amount').value;
+           gia_tri = gia_tri*1
+           let gia_tri = gia_tri / 23000;
+           let ket_qua = document.getElementById('ket_qua');
+           ket_qua.innerText = "gia_tri + 'USD'";
+       });
+   </script>
+</body>
+</html>
