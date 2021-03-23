@@ -9,21 +9,26 @@
 <body>
     <script>
         let userName = prompt("Dạ cho em hỏi ai đây ạ? (tk:Boss,mk:123 :v)", '');
+        
         if (userName == 'Boss') {
-    
-} else if (userName == null) {
-    alert('Canceled');
-} else {
-    alert("Mày là thằng nào ???,boss t đâu");
-}
-let pass = prompt('Password?', '');
-if (pass == '123') {
-    alert('Dạ, em xin chào boss ạ!');
-} else if (pass == null) {
-    alert('Canceled.');
-} else {
-    alert('Sai mật khẩu rồi boss ơi');
-}
+            
+            let pass = prompt('Password?', '');
+            if (pass == '123') {
+                alert('Dạ, em xin chào boss ạ!');
+            } else if (pass == null) {
+                alert('Canceled.');
+            } else {
+                alert('Sai mật khẩu rồi boss ơi');
+            }
+
+        } else if (userName == null) {
+            alert('Canceled');
+        } else {
+            alert("Mày là thằng nào ???,boss t đâu");
+        }
+
+        
+            
     </script>
 </body>
 </html>

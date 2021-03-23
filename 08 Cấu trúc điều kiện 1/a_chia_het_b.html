@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nhập số A <input type='number' id='soa'><br>
+
+    Nhập số B <input type="number" id="sob"><br>
+    <input type="button" id='tinh'value='Xem kết quả'><br>
+    
+    <script>
+       let tinh = document.getElementById('tinh');
+       tinh.addEventListener('click',function(){
+        let soa =document.getElementById('soa').value;
+        let sob =document.getElementById('sob').value;
+        soa = soa*1
+        sob = sob*1
+        if (soa % sob == 0) {
+            alert('A chia hết cho B') ;
+        }else{
+            alert('A không chia hết cho B')
+        }
+
+        
+       });
+    </script>
+</body>
+</html>

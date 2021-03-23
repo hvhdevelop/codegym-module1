@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>BODY MASS INDEX-BMI</h1>
+    <p>
+        Nhập chiều cao: <input type="" id='cc'>m <br>
+        <br>
+        Nhập cân nặng : <input type="number" id='cn'>kg <br>
+    </p>
+    <input type="button" id='kq' value='Kết quả'>
+    <br>
+    Chỉ số BMI của bạn là: <p id='chi_so'></p>
+    Phân loại là: <p id='phan_loai'></p>
+    <script>
+        let kq = document.getElementById('kq');
+        kq.addEventListener('click', function () {
+            let cc = document.getElementById('cc').value;
+            let cn = document.getElementById('cn').value;
+
+            cn = parseInt(cn);
+            let bmi = cn / (cc * cc);
+            let chi_so = document.getElementById('chi_so');
+            chi_so.innerText = bmi;
+            let phan_loai = document.getElementById('phan_loai');
+
+            if (bmi < 18) {
+                phan_loai.innerText = 'Underweight';
+            } else if (bmi < 25) {
+                phan_loai.innerText = "Normal";
+            } else if (bmi < 30) {
+                phan_loai.innerText = "Overweight";
+            } else {
+                phan_loai.innerText = "Obese";
+            }
+
+
+        });
+    </script>
+
+</body>
+
+</html>
