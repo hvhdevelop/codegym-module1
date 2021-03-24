@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src='quabong.jpg' id='bong' style="width: 300px">
+    <p>Click vào nút phía dưới để di chuyển quả bóng</p>
+    <input type='button' id='nut' value='Click me' onclick="moveRight();"/>
+    <script>
+        var img0bj = null;
+        img0bj = document.getElementById('bong');
+        function init() {
+            img0bj = document.getElementById('bong');
+            img0bj.style.position = 'relative';
+            img0bj.style.left = '0px';
+
+        }
+        function moveRight() {
+            img0bj.style.left = parseInt(img0bj.style.left) + 10 +'px';
+
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>

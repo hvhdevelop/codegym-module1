@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"><b>Do you love me?</b></h1>
+    <p style="text-align: center;">
+        <input type="button" name="" id="yes" value="Yes">
+        <input type="button" name="" id="no" value="No">
+    </p>
+    <script>
+        document.getElementById('yes').addEventListener('click', function () {
+            alert('I LOVE U TOO');
+        })
+        var height = window.innerHeight;
+        //console.log(height);
+        var width = window.innerWidth;
+        //console.log(width);
+        //306
+        //520
+        var no = document.getElementById('no');
+        no.style.position = 'relative';
+        no.style.left = '0px';
+        no.style.top = '0px';
+        no.addEventListener('mouseover', function () {
+            var so_nn1 = Math.random() * 200;
+            var so_nn2 = Math.random() * 200;
+            //console.log(so_nn);
+            //width
+            //if (so_nn <= width) {
+                no.style.left = so_nn1 + 'px';
+            //}
+            //height
+            //if (so_nn <= height) {
+                no.style.top = so_nn2 + 'px';
+            //}
+        })
+    </script>
+</body>
+</html>

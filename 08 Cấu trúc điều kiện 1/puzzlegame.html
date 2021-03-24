@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><img src="./puzzlegame/1.jpg" id='img_1'/></td>
+        </tr>
+        <tr>
+            <td><img src="./puzzlegame/1.jpg" id='img_2'/></td>
+        </tr>
+        <tr>
+            <td><img src="./puzzlegame/1.jpg" id='img_3'/></td>
+        </tr>
+        <tr>
+            <td><img src="./puzzlegame/1.jpg" id='img_4'/></td>
+        </tr>
+        <tr>
+            <td><img src="./puzzlegame/1.jpg" id='img_5'/></td>
+        </tr>
+    </table>
+    <script>
+        var img_1 = document.getElementById('img_1');
+        img_1.addEventListener('click',function(){
+            var so_hinh = Math.floor( Math.random() * 15) + 1;
+            var ten_hinh = './puzzlegame/' + so_hinh + '.jpg';
+            img_1.src = ten_hinh;
+        });
+        var img_2 = document.getElementById('img_2')
+        img_2.addEventListener('click',function(){
+            var so_hinh = Math.floor( Math.random() * 15) + 1;
+            var ten_hinh = './puzzlegame/' + so_hinh + '.jpg';
+            img_2.src = ten_hinh;
+        });
+        var img_3 = document.getElementById('img_3')
+        img_3.addEventListener('click',function(){
+            var so_hinh = Math.floor( Math.random() * 15) + 1;
+            var ten_hinh = './puzzlegame/' + so_hinh + '.jpg';
+            img_3.src = ten_hinh;
+        });
+        var img_4 = document.getElementById('img_4')
+        img_4.addEventListener('click',function(){
+            var so_hinh = Math.floor( Math.random() * 15) + 1;
+            var ten_hinh = './puzzlegame/' + so_hinh + '.jpg';
+            img_4.src = ten_hinh;
+        });
+        var img_5 = document.getElementById('img_5')
+        img_5.addEventListener('click',function(){
+            var so_hinh = Math.floor( Math.random() * 15) + 1;
+            var ten_hinh = './puzzlegame/' + so_hinh + '.jpg';
+            img_5.src = ten_hinh;
+        });
+
+    </script>
+</body>
+</html>
