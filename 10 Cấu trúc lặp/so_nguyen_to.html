@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let numbers = 10;
+    let count = 0;
+
+    for(let n =2; n<=10;n++){
+        let count_uoc_so = 0;
+        for(let y = 2; y<= 10; y++){
+            if( n%y==0){
+                count_uoc_so++;
+            }
+        }
+        if(count_uoc_so==1){
+            count++;
+            document.write(n + " là số nguyên tố <br>");
+        }
+    }
+    document.write('Có tất cả ' + count + ' số nguyên tố');
+    document.write(`<br> Có tổng cộng là: ${count} số nguyên tố `);
+    </script>
+</body>
+</html>

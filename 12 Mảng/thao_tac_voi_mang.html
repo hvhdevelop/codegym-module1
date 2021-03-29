@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thao tác với mảng</title>
+</head>
+<body>
+    <p><b><i>Sample Screen:</i></b></p>
+    <input type="text" id="value" size="20">
+    <input type="button" id="add" value="Add">
+    <input type="button" id="display" value="Display">
+    <hr>
+    <div id="result"></div>
+  
+    <script>
+        let add = document.getElementById("add");
+        let numbers = [];
+        add.addEventListener('click',function(){
+            let value = document.getElementById("value").value;
+            let do_dai = numbers.length;
+            numbers[do_dai] = value;
+        });
+        let display = document.getElementById('display');
+        display.addEventListener('click',function(){
+            let result = document.getElementById('result');
+            console.log(numbers);
+            result.innerHTML = '';
+            for ( let i =0; i < numbers.length; i++){
+              result.innerHTML += 'Element ' + i +  '='  + numbers[i]+"<br/>";
+              
+            }
+            
+        });
+    </script>
+</body>
+</html>
+let sachs = ['a','b','c'];
+     let vos = ['e','f'];
+     let abc = sachs.concat(vos);
+     abc.splice(2,5);
+     console.log(abc);
+     

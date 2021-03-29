@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form>
         <table border="1">
-        <input type="number" id='o_tinh'/>
-        
+            <input type="text" id='o_tinh' />
+
             <tr>
-            <td><input type='button' id='1' value='1'/></td>
-            <td><input type='button' id='2' value='2'/></td>
-            <td><input type='button' id='3' value='3'/></td>
-            <td><input type='button' id='+' value='+'/></td>
-        </tr>
-        <tr>
-            <td><input type='button' id='4' value='4'/></td>
-            <td><input type='button' id='5' value='5'/></td>
-            <td><input type='button' id='6' value='6'/></td>
-            <td><input type='button' id='-' value='-'/></td>
-        </tr>
-        <tr>
-            <td><input type='button' id='7' value='7'/></td>
-            <td><input type='button' id='8' value='8'/></td>
-            <td><input type='button' id='9' value='9'/></td>
-            <td><input type='button' id='*' value='*'/></td>
-        </tr>
-        <tr>
-            <td><input type='button' id='C' value='C'/></td>
-            <td><input type='button' id='0' value='0'/></td>
-            <td><input type='button' id='=' value='='/></td>
-            <td><input type='button' id='/' value='/'/></td>
-        </tr>
-    </table>
+                <td><input type='button' onclick="nhapSo('1')" value='1' /></td>
+                <td><input type='button' onclick="nhapSo('2')" id='2' value='2' /></td>
+                <td><input type='button' onclick="nhapSo('3')" id='3' value='3' /></td>
+                <td><input type='button' onclick="nhapSo('+')" id='+' value='+' /></td>
+            </tr>
+            <tr>
+                <td><input type='button' onclick="nhapSo('4')" id='4' value='4' /></td>
+                <td><input type='button' onclick="nhapSo('5')" id='5' value='5' /></td>
+                <td><input type='button' onclick="nhapSo('6')" id='6' value='6' /></td>
+                <td><input type='button' onclick="nhapSo('-')" id='-' value='-' /></td>
+            </tr>
+            <tr>
+                <td><input type='button' onclick="nhapSo('7')" id='7' value='7' /></td>
+                <td><input type='button' onclick="nhapSo('8')" id='8' value='8' /></td>
+                <td><input type='button' onclick="nhapSo('9')" id='9' value='9' /></td>
+                <td><input type='button' onclick="nhapSo('*')" id='*' value='*' /></td>
+            </tr>
+            <tr>
+                <td><input type='button' onclick="xoa()" id='C' value='C' /></td>
+                <td><input type='button' onclick="nhapSo('0')" id='0' value='0' /></td>
+                <td><input type='button' onclick="kq(o_tinh.value)" id='=' value='=' /></td>
+                <td><input type='button' onclick="nhapSo('/')" id='/' value='/' /></td>
+            </tr>
+        </table>
     </form>
     <script>
-        let kq = document.getElementById('o_tinh');
-        let so1 = document.getElementById('1').value;
-        so1 = parseInt(so1)
-        kq.innerText = so1
-     
-   
+        var pheptinh = '';
+        function nhapSo(so) {
+
+            let sodau = so;
+            pheptinh += sodau;
+           
+           document.getElementById('o_tinh').value=  pheptinh ;
+        }
+        function xoa(){
+            document.getElementById('o_tinh').value= '';
+        }
+        function kq(chuoi){
+        
+          let ketqua = eval(chuoi);
+          document.getElementById('o_tinh').value=  ketqua ;
+          pheptinh ='';
+        }
     </script>
 </body>
+
 </html>

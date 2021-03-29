@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src='nobita.png'style="position:absolute;left:0; top:0;" height="100" width="80" id='nobita'/>
+    <script>
+        let tank = document.getElementById('nobita');
+        let window_width = window.innerWidth;
+        let window_height = window.innerHeight;
+
+        document.addEventListener('keydown',function( e ){
+            let phim_bam = e.code;
+            switch (phim_bam) {
+                case 'ArrowRight':
+                    var value_left = tank.style.left;
+                    value_left = parseInt(value_left);
+                    value_left = value_left + 100;
+                
+
+                        tank.style.left = value_left + 'px';
+                    break;
+
+                case 'ArrowLeft':
+                    var value_left = tank.style.left;
+                    value_left = parseInt(value_left);
+                    value_left = value_left - 100;
+                        tank.style.left = value_left + 'px';
+                    
+                    break;
+                case 'ArrowDown':
+          
+
+                    var value_top = tank.style.top;
+                    value_top = parseInt(value_top);
+                    value_top = value_top + 100;
+                        tank.style.top = value_top + 'px';
+   
+                break;
+                case 'ArrowUp':
+                    var value_top = tank.style.top;
+                    value_top = parseInt(value_top);
+                    value_top = value_top - 100;
+                        tank.style.top = value_top + 'px';
+                    
+                    tank.style.transform = 'rotate(360deg)';
+                break;
+            
+            }
+            
+        });
+
+    </script>
+</body>
+</html>
