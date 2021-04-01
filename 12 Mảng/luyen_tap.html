@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><b>Từ điển:</b></p>
+    <p>Nhập từ cần tìm : <input type="text" id="nhap" size=" 30"></p>
+    <input type="button" value="Tìm" onclick="tim_kiem()">
+    <p id='result'>Result :</p>
+    <script>
+        function tim_kiem() {
+            let nhap = document.getElementById("nhap").value;
+            let res = document.getElementById("result");
+            let englishs = ['hello', 'what', 'good', 'fine'];
+            let vietnams = ['chào', 'gì', 'tốt', 'ổn'];
+            for (let i =0; i <= englishs.length;i++ ){
+                if (nhap == englishs[i]){
+                    res.innerText = vietnams[i];
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+
+<body>
+    <h1>[Bài tập] Luyện tập tạo và sử dụng hàm 02</h1>
+    <p><b>Bài 1:</B>Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</p>
+    Input :<input type="number" id="nhap_1" size="15px">;
+    <input type="button" value="Convert" onclick="binh_phuong()">
+    <p id="result1">Result :</p>
+    <hr>
+    <p><b>Bài 2:</B>Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</p>
+    Input :<input type="number" id="nhap_2" size="15px">;
+    <input type="button" value="Convert" onclick="hinh_tron()">
+    <p id="result2">Result :</p>
+    <hr>
+    <p><b>Bài 3:</B>Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</p>
+    Input :<input type="number" id="nhap_3" size="15px">;
+    <input type="button" value="Convert" onclick="giai_thua()">
+    <p id="result3">Result :</p>
+    <hr>
+    <script>
+        function binh_phuong() {
+            let c = document.getElementById("nhap_1").value;
+            let res = document.getElementById("result1");
+            res.innerHTML = `Result : ${c * c} `
+        }
+        function hinh_tron() {
+            let c           = document.getElementById("nhap_2").value;
+            let res         = document.getElementById("result2");
+            const pi        = 3.14;
+            let dientich    = c * c * pi;
+            let chuvi       = c * 2 * pi;
+            res.innerHTML = 'Result: Diện tích :' + dientich + ', ' + 'Chu vi: ' + chuvi
+        }
+        function giai_thua() {
+            let c = document.getElementById("nhap_3").value;
+            let res = document.getElementById("result3");
+            let total = 1;
+            for (let i = 1; i < c; i++) {
+                total += total * i;
+            }
+            res.innerHTML = 'Result: ' + total;
+        }
+    </script>
+</body>
+
+</html>

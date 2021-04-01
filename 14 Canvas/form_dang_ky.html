@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+    <h2>Đăng ký thành viên</h2>
+    <table>
+        <tr>
+            <td style="width: 30%;">Họ</td>
+            <td><input type="text" id="ho" size="40px">
+            <p style="color: red; font-size: smaller;" id="alert_1"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>Tên</td>
+            <td><input type="text" id="ten" size="40px">
+                <p style="color: red; font-size: smaller;" id="alert_2"></p></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" id="email" size="40px">
+                <p style="color: red; font-size: smaller;" id="alert_3"></p></td>
+        </tr>
+        <tr>
+            <td>Mật khẩu</td>
+            <td><input type="password" id="mat_khau" size="40px"></td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="number" size="10px" placeholder="Ngày" id="day">
+                            <input type="number" size="10px" placeholder="Tháng" id="month">
+                            <input type="number" size="10px" placeholder="Năm" id="years">
+                            <p style="color: red; font-size: smaller;" id="alert_4"></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>Giới tính</td>
+            <td><input type="radio" name="gender">Nam
+                <input type="radio" name="gender">Nữ
+                <p style="color: red; font-size: smaller;" id="alert_5"></p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" size="10px" value="Đăng ký" onclick="dang_ky_1()">
+            <input type="reset" value="Đặt lại"></td>
+        </tr>
+        
+    </table>
+
+    <script src="./result.js"></script>
+</form>
+</body>
+
+</html>
