@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+
+<body>
+    <script>
+        //tao lop
+        function Apple() {
+            // khai bao thuoc tinh
+            this.mieng_tao = 20;
+
+            //khai bao phuong thuc
+            this.an_mot_mieng = function () {
+                this.mieng_tao--;
+            }
+            //kiem tra an het chua ?
+            this.an_het_chua = function () {
+                if (this.mieng_tao ===0){
+                    return true;//het roi
+                }else{
+                    return false;//chua het
+                }
+            }
+
+            this.con_may_mieng = function(){
+                return this.mieng_tao;
+            }
+
+        }
+        
+        //tao lop nguoi
+        function Human(ten, can_nang){
+            //khai bao thuoc tinh
+            this.ten = ten;
+            this.gioi_tinh = "";
+            this.can_nang = can_nang;
+
+            //khai bao phuong thuc
+            this.la_nam = function(){
+                if(this.gioi_tinh == "male") {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            // phuong thuc thiet lap gioi tinh
+            this.dat_gioi_tinh = function(sex){
+                this.gioi_tinh = sex;
+            }
+            // phuong thuc an tao
+            this.an_tao = function(qua_tao){
+
+                //neu an chua het tiep tuc an
+                if( qua_tao.an_het_chua()  == false ){
+                    qua_tao.an_mot_mieng();
+                    console.log(`${this.ten} eat apple `);
+                }
+            }
+        }
+        // tao lop chuyen
+        function theStory(){
+            
+        }
+        // khoi tao doi tuong tao
+        let qua_tao = new Apple();
+        // khoi tao doi tuong Adam
+        let Adam = new Human('Adam',60);
+
+        // dat gioi tinh nam
+        Adam.dat_gioi_tinh("male");
+
+        //khoi tao doi tuong eva
+        let Eva = new Human("Eva", 45);
+
+        // dat gioi tinh nu
+        Eva.dat_gioi_tinh("female");
+
+        while (qua_tao.mieng_tao > 0 ) {
+            Adam.an_tao(qua_tao);
+            Eva.an_tao(qua_tao);
+            
+        }
+        console.log('Apple are already eaten');
+
+
+    </script>
+</body>
+
+</html>

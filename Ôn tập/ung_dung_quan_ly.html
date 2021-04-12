@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng quản lý công việc</title>
+    <link rel="stylesheet" href="./css.css">
+</head>
+
+<body>
+    <form>
+    <h1 style="padding-left: 10%;">Work Date</h1>
+    <hr>
+    <p>
+    <h3>Thêm mới cuộc hẹn:</h3>
+    <input type="text" id="them_cuoc_hen">
+    <br>
+    <h3>Thời gian hẹn:</h3>
+    <input type="text" id="thoi_gian_hen">
+    <br>
+    <input type="button" value="Thêm" id="them_moi">
+    <input type="reset" value="Đặt lại">
+    </p>
+    <hr>
+    <p>
+    </form>
+    <h3>Danh sách các cuộc hẹn:</h3>
+    <hr>
+    <table >
+        <thead>
+            <tr>
+                <th style="text-align: left;"><u>Nội dung</u></th>
+                <th style="text-align: center;"><u>Thời gian</u></th>
+                <th style="text-align: right; color:brown" colspan="2">
+                    <p id="counter"></p>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="cuoc_hen">
+
+        </tbody>
+        
+    </table>
+    <script src="java.js"></script>
+    </p>
+    
+</body>
+
+</html>

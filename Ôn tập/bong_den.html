@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Tao{
+            constructor(){
+                this.mieng_tao = 10;
+            
+            }
+            an_mot_mieng(){
+            this.mieng_tao --;
+            }
+            an_het_chua(){
+                if (this.mieng_tao ===0){
+                    return true;//het roi
+                }else{
+                    return false;//chua het
+                }
+            }
+        }
+        class Nguoi{
+            constructor(ten){
+                this.ten = ten;
+            }
+            an_tao(qua_tao){
+                if(qua_tao.an_het_chua()  == false ){
+                    qua_tao.an_mot_mieng();
+                    console.log(`${this.ten} eat apple `);
+                }
+            }
+        }
+        let qua_tao = new Tao();
+        let adam = new Nguoi('Adam');
+        let eva = new Nguoi('Eva');
+
+        while (qua_tao.mieng_tao > 0 ) {
+            adam.an_tao(qua_tao);
+            eva.an_tao(qua_tao);
+            
+        }
+        console.log('Apple are already eaten');
+
+    </script>
+</body>
+</html>

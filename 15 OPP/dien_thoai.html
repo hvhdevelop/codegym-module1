@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //khai báo lớp điện thoại
+        let Mobile = function(){
+            //các thuộc tính
+            this.trang_thai_pin          = 100;//0->100
+            this.tin_nhan_dang_soan_thao = '';
+            this.hop_thu_den             = '';
+            this.tin_nhan_da_gui         = '';
+            //giúp lưu trữ tình trạng bật tắt
+            this.tinh_trang_dien_thoai   = false;
+            //chức năng kiểm tra bật hay tắt ( get )
+            this.bat_hay_tat = function(){
+                return this.tinh_trang_dien_thoai;
+            }
+            //chức năng bật điện thoại ( set )
+            this.bat_dien_thoai = function(){
+                this.tinh_trang_dien_thoai = true;
+            }
+
+            
+            //chức năng soạn tin nhắn
+            this.soan_tin_nhan = function(new_mess){
+                this.tin_nhan_dang_soan_thao = new_mess;
+            }
+
+            //chức năng gửi tin nhắn
+            this.gui_tin_nhan = function(){
+                //lấy được nội dung tin nhắn mà chúng ta vừa soạn
+                let noi_dung_tin_nhan = this.tin_nhan_dang_soan_thao;
+                //gửi cho ai đó
+
+                //lưu vào hộp thư đã gửi
+                document.write(noi_dung_tin_nhan);
+
+
+
+            }
+
+            //chức năng nhận tin nhắn
+            this.nhan_tin_nhan = function(){
+               let nhan_tin_nhan_den = this.noi_dung_tin_nhan;
+            }
+            
+
+            /*
+            Lưu ý:
+            Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị.
+            Các chức năng không thể hoạt động nếu điện thoại chưa bật.
+            */
+        }
+        //khoi tao doi tuong
+        let objNokia = new Mobile();
+
+    
+        //bật điện thoại
+        objNokia.bat_dien_thoai(); // thiết lập tinh_trang_dien_thoai = true
+
+        //kiểm tra
+        let bat_hay_tat = objNokia.bat_hay_tat();
+        
+        let objSamsung = new Mobile()
+        objSamsung.bat_dien_thoai();
+        //let bat_hay_tat_2 = objSamsung.bat_hay_tat();
+        //document.write(bat_hay_tat_2);
+        
+        objNokia.soan_tin_nhan('hello !');
+        objNokia.gui_tin_nhan();
+        objSamsung.nhan_tin_nhan();
+        objSamsung.soan_tin_nhan('hi there :v');
+        objSamsung.gui_tin_nhan();
+        objNokia.nhan_tin_nhan();
+  
+        
+ 
+
+
+
+
+
+    </script>
+</body>
+</html>

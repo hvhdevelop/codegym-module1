@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+
+    <style>
+        #phong_nen {
+            border: 1px solid black;
+            height: 360px;
+            width: 800px;
+            background-image: url("anh_1.jpg");
+            background-repeat: repeat-x;
+            background-position-x: 0px;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        #rong_lua {
+            position: relative;
+            top: 195px;
+            transform: rotate(0deg);
+            border-image-repeat: repeat;
+        }
+
+        #pikachu {
+            position: relative;
+            left: 10%;
+            transform: rotate(0deg);
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <div style="background-position-x: 0px;" id="phong_nen">
+        <img id="pikachu" src="./pikachu.png" width="100" height="100" style="top: 200px;">
+        <img id="rong_lua" src="./pokemon_PNG125.png" style="left: 700px;" width="80" height="80">
+        <audio id="Audio">
+            <source src="./bg_2.wav" type="audio/wav">
+        </audio>
+        <audio id="jump">
+            <source src="./jump_sound.wav" type="audio/wav">
+        </audio>
+        <audio id="game_over">
+            <source src="./game_over.wav" type="audio/wav">
+        </audio>
+    </div>
+
+    <script>
+        // tao lớp pikachu
+        class pikachu {
+            constructor() {
+                this.pikachu = document.getElementById('pikachu');
+                this.phong_nen = document.getElementById('phong_nen');
+                this.rong_lua = document.getElementById('rong_lua');
+                this.toc_do = 20;
+            }
+            // tạo phương thức di chuyển
+            di_chuyen_phai() {
+                var value_left = this.phong_nen.style.backgroundPositionX;
+                //chuyển đôiỉ du lieu
+                value_left = parseInt(value_left);
+                //tang gia tri value_left
+                value_left -= this.toc_do;
+                //đat lai gia tri style left
+                //if (value_left < 900) {
+                this.phong_nen.style.backgroundPositionX = value_left + 'px';
+
+                //}
+            }
+            di_chuyen_trai() {
+                var value_left = this.phong_nen.style.backgroundPositionX;
+                value_left = parseInt(value_left);
+                value_left += this.toc_do;
+                //if (value_left > -20) {
+                this.phong_nen.style.backgroundPositionX = value_left + 'px';
+                    console.log(this.phong_nen.style.backgroundPositionX);
+                //}
+            }
+            di_chuyen_nhay() {
+
+                var value_jump = this.pikachu.style.top;
+                value_jump = parseInt(value_jump);
+                value_jump -= 120;
+                if (value_jump <= 360) {
+                    this.pikachu.style.top = value_jump + 'px';
+                }
+                var jump = setInterval(function () {
+                    var value_jump_down = this.pikachu.style.top;
+                    value_jump_down = parseInt(value_jump_down);
+                    value_jump_down += 120;
+                    this.pikachu.style.top = value_jump_down + 'px';
+                    clearInterval(jump);
+                }, 400);
+            }
+            rong_chay() {
+                var rong_bat_dau = 700;
+                var rong_lua_run = setInterval(function () {
+                    rong_bat_dau -= 20;
+
+                    this.rong_lua.style.left = rong_bat_dau + 'px';
+
+                    if (rong_bat_dau < -100) {
+                        rong_bat_dau = 700;
+                    }
+
+
+
+                }, 50);
+            }
+            game_over(){
+                let g_over = document.getElementById("game_over")
+                let pikachu = this.pikachu.style.top;
+                let rong_lua = this.rong_lua.style.left;
+                
+            }
+            
+        }
+        
+
+
+        objpikachu = new pikachu();
+        document.addEventListener('keydown', function (e) {
+            var y =document.getElementById("jump");
+            let phim_bam = e.code;
+            switch (phim_bam) {
+                case 'ArrowRight':
+                    objpikachu.di_chuyen_phai();
+                    break;
+                case 'ArrowLeft':
+                    objpikachu.di_chuyen_trai();
+                    break;
+                case 'ArrowUp':
+                    objpikachu.di_chuyen_nhay();
+                    y.play();
+                    break;
+            }
+        });
+
+        var run = setInterval(function () {
+            var x = document.getElementById("Audio");
+            objpikachu.di_chuyen_phai();
+            x.play();
+        }, 100);
+        objpikachu.rong_chay();
+        objpikachu.game_over();
+
+    </script>
+</body>
+
+</html>

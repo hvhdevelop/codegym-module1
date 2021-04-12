@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký | Linktaigame</title>
+</head>
+<body >
+    <div style="max-width: 700px;">
+    <h1 style="size: 60px;width: 100%;text-align: center;"><b>TẠO TÀI KHOẢN MỚI</b></h1>
+        <form>
+            <hr>
+            <h2>Đăng ký thành viên</h2>
+            <hr>
+            <table style="width: 150%;padding-left: 20px;" >
+                <tr >
+                    <td style="width: 30%;"><b>Tên Đăng Nhập</b></td>
+                    <td><input type="text" id="ten_dang_nhap" size="50px" placeholder="Dùng để đăng nhập">
+                    <p style="color: red; font-size: smaller;" id="alert_1"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Email</b></td>
+                    <td><input type="email" id="email" size="50px" placeholder=" Nhập Địa chỉ Email">
+                        <p style="color: red; font-size: smaller;" id="alert_3" ></p></td>
+                </tr>
+                <tr>
+                    <td><b>Mật khẩu</b></td>
+                    <td><input type="password" id="mat_khau" size="50px"placeholder="Mật khẩu"></td>
+                </tr>
+                <tr>
+                    <td><b>Xác nhận Mật khẩu</b></td>
+                    <td><input type="password" id="xac_nhan_mat_khau" size="50px" placeholder="Nhập lại mật khẩu" ></td>
+                </tr>
+                    <td></td>
+                    <td><input type="button" size="10px" value="Đăng ký" onclick="dang_ky_1()">
+                    <input type="reset" value="Đặt lại"></td>
+                </tr>
+                
+            </table>
+            <hr>
+    </form>
+</div>
+<script>
+    class tao_tai_khoan{
+        constructor(){
+            this.ten_dang_nhap = document.getElementById('ten_dang_nhap');
+        }
+        
+    }
+</script>
+</body>
+</html>

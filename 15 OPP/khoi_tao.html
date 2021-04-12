@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //khoi tao doi tuong truc tiep
+        var hoc_vien_1 = {
+            ten: 'Tâm',
+            age: 30,
+            sdt: '0912345678',
+            tot_nghiep: false
+        };
+
+        /*
+        function Lop_Chung_Minh(){
+​
+        }
+        */
+        // lưu ý***********************************************************************************
+        let Lop_Chung_Minh = function () {
+            //khai bao thuoc tinh
+            this.ten_lop = '';
+            this.tong_so_hoc_vien = 0;
+
+            //khai bao phuong thuc
+            // những phương thức có tác dụng thay đổi giá trị của thuộc tính, gọi đến thuộc tính và gán giá trị cho nó
+            //set : thiết lập
+            this.dat_ten = function (tham_so_ten_lop) {
+                this.ten_lop = tham_so_ten_lop;
+            }
+
+            //get : lấy giá trị
+            // những phương thức có tác dụng lấy về giá trị của thuộc tính
+            this.lay_ten = function () {
+                return this.ten_lop;
+            }
+
+        }
+
+        let obj_Lop_Chung_Minh = new Lop_Chung_Minh();
+            obj_Lop_Chung_Minh.ten_lop;
+            obj_Lop_Chung_Minh.dat_ten;
+        //truy xuat
+        document.write(obj_Lop_Chung_Minh.ten_lop);// ''
+
+        obj_Lop_Chung_Minh.dat_ten('C03');
+
+        document.write('<br>');
+
+        document.write(obj_Lop_Chung_Minh.ten_lop);// C03
+
+        document.write('<br>');
+
+        document.write(obj_Lop_Chung_Minh.lay_ten()); // C03
+
+
+
+
+
+        function Hoc_Vien(ten, age, sdt, tot_nghiep) {
+            //thuoc tinh
+            this.name = ten;
+            this.age = age;
+            this.phone = sdt;
+            this.pass = tot_nghiep;
+
+            //phương thức
+            this.goToSchool = function () {
+                document.write(`Bạn ${this.name} đi học`);
+            }
+            this.report = function () {
+                document.write('Bạn học viên báo cáo');
+            }
+            //document.write( ` Tên: ${ten} <br> Tuổi: ${age} <br> SDT: ${sdt} ` );
+        }
+
+
+        //khởi tạo đối tượng
+        //let objHoc_Vien = new Hoc_Vien(  'Tam' , 30, '0123' , true );
+
+        //truy xuất thuộc tính
+        // document.write( ` Tên học viên là ${ objHoc_Vien.name } <br> ` );
+        // document.write( ` Tuổi học viên là ${ objHoc_Vien.age } <br> ` );
+
+        //truy xuất phương thức
+        //objHoc_Vien.goToSchool();
+        
+
+
+
+    </script>
+</body>
+
+</html>
