@@ -21,7 +21,7 @@
 
         #rong_lua {
             position: relative;
-            top: 195px;
+            top: 205px;
             transform: rotate(0deg);
             border-image-repeat: repeat;
         }
@@ -36,10 +36,17 @@
 </head>
 
 <body>
-    
+    <p style="text-align: center; font-size: 25px;">
+        <b><u>POKEMON GAME</u></b>
+        <br>
+        (Sử dụng nút ⬆ để pikachu nhảy qua chướng ngại vật)
+        
+    </p>
+
+    <p id="Diem" style="text-align: center; font-size: 25px;"></p>
     <div style="background-position-x: 0px;" id="phong_nen">
-        <img id="pikachu" src="./pikachu.png" width="100" height="100" style="top: 200px;">
-        <img id="rong_lua" src="./pokemon_PNG125.png" style="left: 700px;" width="80" height="80">
+        <img id="pikachu" src="./source (3).gif" width="100" height="90" style="top: 195px;">
+        <img id="rong_lua" src="./source (1).gif" style="left: 700px;" width="100" height="100">
         <audio id="Audio">
             <source src="./bg_2.wav" type="audio/wav">
         </audio>
@@ -58,7 +65,11 @@
                 this.pikachu = document.getElementById('pikachu');
                 this.phong_nen = document.getElementById('phong_nen');
                 this.rong_lua = document.getElementById('rong_lua');
-                this.toc_do = 20;
+                this.toc_do = 10;
+                this.diem_so = 0;
+                this.doi_tuong_diem_so =  document.getElementById("Diem");
+                this.game_run = '';
+                this.rong_lua_run = '';
             }
             // tạo phương thức di chuyển
             di_chuyen_phai() {
@@ -68,65 +79,74 @@
                 //tang gia tri value_left
                 value_left -= this.toc_do;
                 //đat lai gia tri style left
-                //if (value_left < 900) {
                 this.phong_nen.style.backgroundPositionX = value_left + 'px';
+                //console.log(value_left);
 
-                //}
+                this.game_over();
             }
             di_chuyen_trai() {
                 var value_left = this.phong_nen.style.backgroundPositionX;
                 value_left = parseInt(value_left);
                 value_left += this.toc_do;
-                //if (value_left > -20) {
                 this.phong_nen.style.backgroundPositionX = value_left + 'px';
-                    console.log(this.phong_nen.style.backgroundPositionX);
-                //}
+
             }
             di_chuyen_nhay() {
 
                 var value_jump = this.pikachu.style.top;
                 value_jump = parseInt(value_jump);
-                value_jump -= 120;
+                value_jump -= 100;
                 if (value_jump <= 360) {
                     this.pikachu.style.top = value_jump + 'px';
                 }
                 var jump = setInterval(function () {
                     var value_jump_down = this.pikachu.style.top;
                     value_jump_down = parseInt(value_jump_down);
-                    value_jump_down += 120;
+                    value_jump_down += 100;
                     this.pikachu.style.top = value_jump_down + 'px';
                     clearInterval(jump);
                 }, 400);
             }
             rong_chay() {
                 var rong_bat_dau = 700;
-                var rong_lua_run = setInterval(function () {
+                this.rong_lua_run = setInterval(function () {
                     rong_bat_dau -= 20;
-
                     this.rong_lua.style.left = rong_bat_dau + 'px';
-
                     if (rong_bat_dau < -100) {
                         rong_bat_dau = 700;
                     }
-
-
-
                 }, 50);
             }
-            game_over(){
-                let g_over = document.getElementById("game_over")
-                let pikachu = this.pikachu.style.top;
-                let rong_lua = this.rong_lua.style.left;
-                
+            game_over() {
+                let top_pikachu = this.pikachu.style.top;
+                let left_rong = this.rong_lua.style.left;
+                console.log(top_pikachu);
+                console.log(left_rong);
+
+                //chuyen doi sang so
+                top_pikachu = parseInt(top_pikachu);
+                left_rong = parseInt(left_rong);
+                if (top_pikachu == 195 && left_rong >= -20 && left_rong <=20) {
+                    this.dung_game();
+                    game_over.play();
+                    alert('GAME OVER')
+                }else{
+                    this.diem_so += 1;
+                    this.doi_tuong_diem_so.innerHTML = `Điểm số:${this.diem_so}`;
+                }
             }
-            
+            dung_game() {
+                clearInterval(this.game_run);
+                clearInterval(this.rong_lua_run);
+            }
+           
         }
-        
+
 
 
         objpikachu = new pikachu();
         document.addEventListener('keydown', function (e) {
-            var y =document.getElementById("jump");
+            var y = document.getElementById("jump");
             let phim_bam = e.code;
             switch (phim_bam) {
                 case 'ArrowRight':
@@ -144,13 +164,11 @@
 
         var run = setInterval(function () {
             var x = document.getElementById("Audio");
-            objpikachu.di_chuyen_phai();
             x.play();
+            objpikachu.di_chuyen_phai();
         }, 100);
+        objpikachu.game_run = run;
         objpikachu.rong_chay();
-        objpikachu.game_over();
-
     </script>
 </body>
-
 </html>
